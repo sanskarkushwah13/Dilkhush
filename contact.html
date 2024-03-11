@@ -105,6 +105,138 @@
     </div>
     <!-- Page Header End -->
 
+    <style>
+        .whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E;
+}
+.send-mail-button {
+  display: inline-block;
+  background-color: #28B463;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.send-mail-button:hover {
+  background-color: #1A9E62;
+}
+
+.send-mail-button i {
+  margin-right: 10px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.mapouter {
+  display: block;
+  margin: 0 auto;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none!important;
+  height: 450px;
+  width: 100%;
+}
+
+.modal-dialog-centered {
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+}
+
+.modal-dialog {
+  max-width: 80%!important;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.btn-close {
+  margin: -1rem -1rem -1rem auto;
+}
+.form-control {
+  margin-bottom: 10px;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #28B463;
+  border-color: #28B463;
+}
+
+.btn-primary:hover {
+  background-color: #1A9E62;
+  border-color: #1A9E62;
+}
+
+@media (min-width: 576px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 55px;
+  background-color: #28B463;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1A9E62;
+}
+
+.bi-phone-vibrate {
+  font-size: 24px;
+  margin-right: 5px;
+}
+    </style>
+    <a href="https://api.whatsapp.com/send?phone=7987733295" target="_blank" class="whatsapp-button">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+    
+    <!-- Font Awesome CDN for WhatsApp icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 
     <!-- Contact Start -->
     <div class="container-fluid contact position-relative px-5" style="margin-top: 90px;">
@@ -118,13 +250,38 @@
                             Deen Dayal Nagar
                              Gwalior
                              Madhya Pradesh</span>
+                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mapModal">
+                                View Map
+                              </button>
+                              
+                              <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="mapModalLabel">Location Map</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="mapouter">
+                                        <div class="gmap_canvas">
+                                          <iframe width="100%" height="450" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.384548473124!2d78.18766561462751!3d26.21418018324113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972c321a2b68a91%3A0x5e450c81c6a22e78!2sDeen%20Dayal%20Nagar%2C%20Gwalior%2C%20Madhya%20Pradesh%20474020%2C%20India!5e0!3m2!1sen!2sin!4v1676541121672!5m2!1sen!2sin" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                        </div>
+                                        <style>.mapouter{position:relative;text-align:right;height:450px;width:100%;}
+                                        .gmap_canvas {overflow:hidden;background:none!important;height:450px;width:100%;}</style>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="bg-primary border-inner text-center text-white p-5">
                         <i class="bi bi-envelope-open fs-1 text-white"></i>
                         <h6 class="text-uppercase my-2">Email Us</h6>
-                        <span>dilkhushweddingservices@gmail.com</span>
+                        <a href="mailto:dilkhushweddingservices@gmail.com" class="send-mail-button">
+                            <i class="fa fa-envelope"></i> Send Mail
+                          </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -132,11 +289,35 @@
                         <i class="bi bi-phone-vibrate fs-1 text-white"></i>
                         <h6 class="text-uppercase my-2">Call Us</h6>
                         <span>7987733295</span>
+                        <a href="tel:+917987733295" class="btn btn-primary">
+                            <i class="bi bi-phone-vibrate fs-1 text-white"></i>
+                            <span class="ms-2">Call Us</span>
+                          </a>
                     </div>
                 </div>
             </div>
+
+            <form action="contact.php" method="post">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;" name="name" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;" name="email" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;" name="subject" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control border-0 bg-light px-4 py-3" rows="1" placeholder="Message" style="height: 55px;" name="message" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                  </div>
+                </div>
+              </form> 
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="row g-5">
                         <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                             <form>
@@ -174,18 +355,18 @@
                                     <!-- <div class="col-md-6">
                                         <input type="" class="form-control border-0 bg-light px-4" placeholder="Shortlisted destination and/or venues" style="height: 55px;">
                                     </div> -->
-                                    <div class="col-12">
+                                    <!-- <div class="col-12">
                                         <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Additional information (if any):"></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                     </div>
-                                </div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28624.20221798014!2d78.18751080169575!3d26.26084301717453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c129f0b213b3%3A0x11f169fd7d38092!2sDeen%20Dayal%20Nagar%2C%20Gwalior%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1707722178162!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </form>
+                                </div> -->
+                                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28624.20221798014!2d78.18751080169575!3d26.26084301717453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c129f0b213b3%3A0x11f169fd7d38092!2sDeen%20Dayal%20Nagar%2C%20Gwalior%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1707722178162!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                            <!-- </form> -->
                         </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
                
