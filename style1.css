@@ -1,0 +1,35 @@
+#floating-button {
+    position: fixed; /* Keep button fixed on screen */
+    bottom: 20px; /* Adjust position from bottom */
+    right: 20px; /* Adjust position from right */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Make button round */
+    background-color: #25D366; /* Color for WhatsApp or contact icon */
+    color: white; /* Text color for icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Change cursor on hover */
+    transition: all 0.3s ease; /* Add smooth transition effect */
+}
+
+#floating-button.inactive {
+    opacity: 0.5; /* Reduce opacity when inactive */
+}
+
+.contact-info {
+    position: fixed; /* Keep contact info fixed */
+    bottom: 20px; /* Adjust position from bottom */
+    left: 20px; /* Adjust position from left */
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    display: none; /* Hide contact info initially */
+    transition: all 0.3s ease; /* Add smooth transition effect */
+}
+
+.contact-info.active {
+    display: block; /* Show contact info when active */
+}
